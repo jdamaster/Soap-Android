@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
     //la url es la ruta hacia el wsdl
     private final String URL = "http://www.w3schools.com/webservices/tempconvert.asmx?WSDL";
     //namespace con el metodo
-    private final String SOAP_ACTION = "http://www.w3schools.com/webservices/CelsiusToFahrenheit";
+    private final String SOAP_ACTION = "http://www.w3schools.com/webservices/FahrenheitToCelsius";
     //Nombre del metodo del servicio web
-    private final String METHOD_NAME = "CelsiusToFahrenheit";
+    private final String METHOD_NAME = "FahrenheitToCelsius";
     private String TAG = "PGGURU";
     private static String celcius;
     private static String fahren ;
@@ -67,15 +67,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void getFahrenheit(String celsius) {
+    public void getFarenheit(String Farenheit) {
         //Create request
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         //Property which holds input parameters
         PropertyInfo celsiusPI = new PropertyInfo();
         //Set Name
-        celsiusPI.setName("Celsius");
+        celsiusPI.setName("Fahrenheit");
         //Set Value
-        celsiusPI.setValue(celsius);
+        celsiusPI.setValue(Farenheit);
         //Set dataType
         celsiusPI.setType(double.class);
         //Add the property to request object
@@ -128,14 +128,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(String... params) {
             Log.i(TAG, "doInBackground");
-            getFahrenheit(celcius);
+            getFarenheit(celcius);
             return null;
         }
 
         @Override
         protected void onPostExecute(Void result) {
             Log.i(TAG, "onPostExecute");
-            tv.setText(fahren + " F");
+            tv.setText(fahren + " C");
         }
 
         @Override

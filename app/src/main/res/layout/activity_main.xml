@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Celsius to Farenheit"
+        android:text="farenheit to celcius"
         android:textSize="30dp" />
 
     <EditText
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:text="Convert to Farenheit" />
+        android:text="Convert to Celcius" />
 
     <TextView
         android:id="@+id/tv_result"
