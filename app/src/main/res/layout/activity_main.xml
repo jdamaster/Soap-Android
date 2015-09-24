@@ -19,7 +19,12 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:numeric="integer"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:autoText="false"
+        android:contextClickable="false"
+        android:editable="false"
+        android:linksClickable="false"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/button1"

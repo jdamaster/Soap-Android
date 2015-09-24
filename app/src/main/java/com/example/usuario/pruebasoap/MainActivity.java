@@ -22,13 +22,17 @@ import org.ksoap2.transport.HttpTransportSE;
 
 
 public class MainActivity extends AppCompatActivity {
+    //targetNamespace, se encuentra en el wsdl
     private final String NAMESPACE = "http://www.w3schools.com/webservices/";
-    private final String URL = "http://www.w3schools.com/webservices/tempconvert.asmx";
+    //la url es la ruta hacia el wsdl
+    private final String URL = "http://www.w3schools.com/webservices/tempconvert.asmx?WSDL";
+    //namespace con el metodo
     private final String SOAP_ACTION = "http://www.w3schools.com/webservices/CelsiusToFahrenheit";
+    //Nombre del metodo del servicio web
     private final String METHOD_NAME = "CelsiusToFahrenheit";
     private String TAG = "PGGURU";
     private static String celcius;
-    private static String fahren;
+    private static String fahren ;
     Button b;
     TextView tv;
     EditText et;
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     AsyncCallWS task = new AsyncCallWS();
                     //Call execute
                     task.execute();
+
                     //If text control is empty
                 } else {
                     tv.setText("Please enter Celcius");
@@ -130,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             Log.i(TAG, "onPostExecute");
-            tv.setText(fahren + "° F");
+            tv.setText(fahren + " F");
         }
 
         @Override
